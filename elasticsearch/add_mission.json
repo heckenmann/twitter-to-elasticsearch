@@ -1,0 +1,11 @@
+PUT /tte_settings/mission
+{
+    "node" : "localhost",
+    "name" : "my_java_mission",
+    "index" : "twitter_java",
+    "trackterms" : [ "java", "programming" ],
+    "consumerKey" : "",
+    "consumerSecret" : "",
+    "token" : "",
+    "tokenSecret" : ""
+}
