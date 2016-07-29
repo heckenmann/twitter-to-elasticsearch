@@ -1,0 +1,26 @@
+PUT /_template/twitter
+{
+  "template": "twitter*",
+  "order": 0,
+  "mappings": {
+    "tweet": {
+      "dynamic_templates": [
+        {
+          "my_description_for_mapping": {
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "string",
+              "index": "not_analyzed"
+            }
+          }
+        }
+      ],
+      "properties" : {
+        "created_at" : {
+          "type" : "date",
+          "format" : "EE MMM d HH:mm:ss Z yyyy"
+        }
+      }
+    }
+  }
+}
