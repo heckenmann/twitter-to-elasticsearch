@@ -82,7 +82,7 @@ public class TwitterClient implements Runnable {
     }
 
     public void run() {
-        ElasticsearchInserter i = new ElasticsearchInserter(TwitterToElasticsearch.ELASTICSEARCH_URL, mission.getIndex() == null ? "twitter" : mission.getIndex(), "tweet");
+        ElasticsearchInserter i = new ElasticsearchInserter(Parameter.ELASTICSEARCH_URL, mission.getIndex() == null ? "twitter" : mission.getIndex(), "tweet");
         while (!hosebirdClient.isDone()) {
             try {
                 String json = msgQueue.take();

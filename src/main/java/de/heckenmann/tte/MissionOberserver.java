@@ -17,6 +17,7 @@ public class MissionOberserver {
     private static final long SLEEP = 5000;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MissionOberserver.class);
+    private static final String NODE_NAME_PREFIX = "<node>" + Parameter.NODE_NAME + "</node>";
 
     private final ElasticsearchSettings settings;
     private final Map<String, Thread> threads;
@@ -33,7 +34,7 @@ public class MissionOberserver {
             // Missionen finden, die noch nicht gestartet wurden.
             for (Document<Mission> d : missions) {
                 String uid = generateUID(d);
-                if (!threads.containsKey(uid)) {
+                if (uid.startsWith(NODE_NAME_PREFIX) && !threads.containsKey(uid)) {
                     LOGGER.info("Found new mission: " + uid);
                     Thread newThread = new Thread(new TwitterClient(d.getSource()));
                     newThread.setName(uid);
@@ -43,7 +44,7 @@ public class MissionOberserver {
             }
             // Gestartete Missionen finden, die gestoppt werden sollen.
             for (String uid : threads.keySet()) {
-                if (!validKeys.contains(uid) && threads.get(uid).isAlive() && !threads.get(uid).isInterrupted()) {
+                if (uid.startsWith(NODE_NAME_PREFIX) && !validKeys.contains(uid) && threads.get(uid).isAlive() && !threads.get(uid).isInterrupted()) {
                     LOGGER.info("Stopping old mission: " + uid);
                     threads.get(uid).interrupt();
                     threads.remove(uid);
@@ -58,7 +59,9 @@ public class MissionOberserver {
         }
     }
 
-    private <T> String generateUID(Document<T> d) {
-        return d.getId() + "_v" + d.getVersion();
+    private static String generateUID(Document<Mission> d) {
+        return "<node>" + d.getSource().getNode() + "</node>"
+                + "<id>" + d.getId() + "</id>"
+                + "<version>" + d.getVersion() + "</version>";
     }
 }

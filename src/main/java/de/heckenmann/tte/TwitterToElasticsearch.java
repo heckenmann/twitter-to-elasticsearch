@@ -13,14 +13,13 @@ public class TwitterToElasticsearch {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TwitterToElasticsearch.class);
 
-    private static final String ELASTICSEARCH_URL_ENV = System.getenv("TTE_ELASTICSEARCH_URL");
-    private static final String ELASTICSEARCH_URL_PROP = System.getProperty("TTE_ELASTICSEARCH_URL");
-
-    public static final String ELASTICSEARCH_URL = ELASTICSEARCH_URL_PROP == null ? ELASTICSEARCH_URL_ENV == null ? "http://localhost:9200" : ELASTICSEARCH_URL_ENV : ELASTICSEARCH_URL_PROP;
-
     public static void main(String... args) {
         BasicConfigurator.configure();
         LOGGER.info("TwitterToElasticsearch starting...");
+        LOGGER.info("node name is: " + Parameter.NODE_NAME);
+        if (Parameter.NODE_NAME == null || Parameter.NODE_NAME.equals("undefined")) {
+            LOGGER.warn("\"NODE_NAME\" should be defined!");
+        }
 
         ElasticsearchSettings settings = new ElasticsearchSettings();
         Map<String, Thread> threads = new HashMap<>(10);

@@ -25,7 +25,7 @@ public class ElasticsearchSettings {
 
     public ElasticsearchSettings() {
         this.client = ClientBuilder.newClient();
-        missionsTarget = this.client.target(TwitterToElasticsearch.ELASTICSEARCH_URL).path("tte_settings").path("mission");
+        missionsTarget = this.client.target(Parameter.ELASTICSEARCH_URL).path("tte_settings").path("mission");
     }
 
     /**
