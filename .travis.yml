@@ -4,10 +4,10 @@ jdk:
 - oraclejdk8
 
 install:
-  -
+  -mvn install -DskipTests=true
 
 script:
-  mvn install -DskipTests=true
+  
 
 deploy:
   skip_cleanup: true
