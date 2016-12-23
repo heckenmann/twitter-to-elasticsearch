@@ -6,8 +6,5 @@ jdk:
 install:
   mvn install -DskipTests=true
 
-after_success:
-  
-
 deploy:
   skip_cleanup: true
