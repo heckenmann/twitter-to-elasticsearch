@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/heckenmann/twitter-to-elasticsearch.svg?branch=master)](https://travis-ci.org/heckenmann/twitter-to-elasticsearch)
+
 # twitter-to-elasticsearch
 Twitter Stream API to elasticsearch: https://dev.twitter.com/streaming/overview
 
