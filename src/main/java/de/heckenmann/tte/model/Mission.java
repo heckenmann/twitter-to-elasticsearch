@@ -1,7 +1,8 @@
 package de.heckenmann.tte.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Created by Ben on 23.07.2016.

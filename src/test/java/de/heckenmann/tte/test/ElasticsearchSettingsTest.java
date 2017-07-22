@@ -1,13 +1,14 @@
 package de.heckenmann.tte.test;
 
-import de.heckenmann.tte.ElasticsearchSettings;
-import de.heckenmann.tte.model.Document;
-import de.heckenmann.tte.model.Mission;
+import java.util.List;
+
 import org.apache.log4j.BasicConfigurator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.List;
+import de.heckenmann.tte.ElasticsearchSettings;
+import de.heckenmann.tte.model.Document;
+import de.heckenmann.tte.model.Mission;
 
 /**
  * Created by Ben on 23.07.2016.

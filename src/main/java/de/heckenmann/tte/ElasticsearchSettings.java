@@ -1,18 +1,22 @@
 package de.heckenmann.tte;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import de.heckenmann.tte.helper.ESMappingHelper;
-import de.heckenmann.tte.model.Document;
-import de.heckenmann.tte.model.Mission;
 import java.util.List;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+
+import de.heckenmann.tte.helper.ESMappingHelper;
+import de.heckenmann.tte.model.Document;
+import de.heckenmann.tte.model.Mission;
 
 /**
  * @author heckenmann
