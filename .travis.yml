@@ -3,5 +3,10 @@ language: java
 jdk:
 - oraclejdk8
 
+addons:
+  sonarcloud:
+    organization: "heckenmann-github"
+    token: "$sonarcloud-token"
+
 install:
-  mvn install -DskipTests=true
+  mvn install sonar:sonar -DskipTests=true
