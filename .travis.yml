@@ -8,7 +8,7 @@ jdk:
 addons:
   sonarcloud:
     organization: "heckenmann-github"
-    token: "$sonarcloud-token"
+    token: "Jsqzm/iVA54qULshW4mbu9XeGVcUzxdOaevu2JmSEw8iZW3877l9LXaD/jnYOU7kLsHWYCt9LUv1HoScIyvydqKMYUP83s7zBtnWQ66xJ6oxFdXGOCXfy32aWgNNkiLMaxRFc/3YD90HCyP1OAjZ3uR7UWIK24k8UexpdUfx4Z8RCOiNMnlU3dHyOpphEfeq2ow049u3QerztCPnRT+6bEg/kw9bxH64NzZ7UTa2yf3sFay5MZ/K4ywHxqygzQkjJL9sOlltbQb004CLE56yjZS1GcNlAxauAk+JS50aPEcsr7sfP+XdPcE8seZ78GUEWjmLrMKeLco9JiF2+SlZ3mR7OMALsCBv+0XvJs9x1si0hb44ZQQfkhsZoUNwVIpPYBqEMFlS4gd8AJBeBg/mwty5hUzKo73lFGDQnXJn4OFcnx3g95N9/NJKNCjKMAKVP6cn4k7GhD/Pw2q/B5Is5bXZPzpZWro04/0zHw4sHq5l9iz1c4CVm29dvyAERTUKmFZtk9392uFLJcO2EN+nfSuGWRn0x1PzZ8IoQqb/iKbdT6i+thG6vzwXEdWpcQVlgmUG+0AQzIfBamO6HYXSl0vRAP5Fyhx06Ujylp/Y1EGT789A9ClpcxOwakWzceDQq9fTj/YlCGj1OvZyQ0HRvWk/q7SF1YiG+hyPnSrhghc="
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -DskipTests=true
