@@ -1,12 +1,18 @@
 language: java
+sude: false
+install: true
 
 jdk:
-- oraclejdk8
+  - oraclejdk8
 
 addons:
   sonarcloud:
     organization: "heckenmann-github"
     token: "$sonarcloud-token"
 
-install:
-  mvn install sonar:sonar -DskipTests=true
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -DskipTests=true
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
