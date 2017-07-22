@@ -12,17 +12,17 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by Ben on 24.07.2016.
  */
-public class MissionOberserver {
+public class MissionObserver {
 
     private static final long SLEEP = 5000;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MissionOberserver.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MissionObserver.class);
     private static final String NODE_NAME_PREFIX = "<node>" + Parameter.NODE_NAME + "</node>";
 
     private final ElasticsearchSettings settings;
     private final Map<String, Thread> threads;
 
-    public MissionOberserver(ElasticsearchSettings settings, Map<String, Thread> threads) {
+    public MissionObserver(ElasticsearchSettings settings, Map<String, Thread> threads) {
         this.settings = settings;
         this.threads = threads;
     }

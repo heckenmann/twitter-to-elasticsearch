@@ -23,7 +23,7 @@ public class TwitterToElasticsearch {
 
         ElasticsearchSettings settings = new ElasticsearchSettings();
         Map<String, Thread> threads = new HashMap<>(10);
-        MissionOberserver observer = new MissionOberserver(settings, threads);
+        MissionObserver observer = new MissionObserver(settings, threads);
         observer.start();
     }
 
